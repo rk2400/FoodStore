@@ -306,7 +306,7 @@ servedCustomer *insertion(int age, string name, int quantity, string itemName, d
 
     else
     {
-        cout << "No duplicates Values are Allowed " << endl;
+        cout << "No duplicates values are allowed " << endl;
         return root;
     }
 
@@ -455,7 +455,7 @@ void placeOrderTakeAwayCustomer(int age, string name, string itemName, int quant
             currentTakeAwayCustomer->next = NULL;
         }
     }
-    cout << "Your Order has been Placed MR/MRS " << name << " and your order is " << itemName << " with " << quantity << " quantity and total bill is " << bill << endl;
+    cout << "Your Order has been Placed Mr/Ms " << name << " and your order is " << itemName << " with " << quantity << " quantity and total bill is ₹" << bill << endl;
 }
 void serveOrderTakeAwayCustomer()
 {
@@ -510,7 +510,7 @@ void placeOrderDineInCustomer(int age, string name, string itemName, int quantit
         temp->next = currentDineInCustomer;
         currentDineInCustomer->next = NULL;
     }
-    cout << "Your Order has been Placed MR/MRS " << name << " and your order is " << itemName << " with " << quantity << " quantity and total bill is " << bill << endl;
+    cout << "Your Order has been Placed Mr/Ms " << name << " and your order is " << itemName << " with " << quantity << " quantity and total bill is ₹" << bill << endl;
 }
 void serveOrderDineInCustomer()
 {
@@ -564,7 +564,7 @@ void placeOrderHomeDeliveryCustomer(int age, string name, string itemName, int q
         temp->next = currentHomeDeliveryCustomer;
         currentHomeDeliveryCustomer->next = NULL;
     }
-    cout << "Your Order has been Placed MR/MRS " << name << " and your order is " << itemName << " with " << quantity << " quantity and total bill is " << bill << endl;
+    cout << "Your Order has been Placed Mr/Ms " << name << " and your order is " << itemName << " with " << quantity << " quantity and total bill is ₹"  << bill << endl;
 }
 
 void serveOrderHomeDeliveryCustomer()
@@ -638,7 +638,7 @@ void displayAllOrdersTakeAwayCustomers()
 {
     if (myFoodStore->nextTakeAwayCustomer == NULL)
     {
-        cout << "There is no Order for Walking Customer till yet" << endl;
+        cout << "There is no Order for Walk-in Customer yet" << endl;
     }
     else
     {
@@ -649,9 +649,9 @@ void displayAllOrdersTakeAwayCustomers()
             cout << "-----------------------------------------------------" << endl;
             cout << "Take-Away Customer : " << traversal->cusotomer.name << endl;
             cout << "Age : " << traversal->cusotomer.age << endl;
-            cout << "Pizza Name : " << traversal->cusotomer.itemName << endl;
+            cout << "Item Name : " << traversal->cusotomer.itemName << endl;
             cout << "Quantity : " << traversal->cusotomer.quantity << endl;
-            cout << "Bill : " << traversal->cusotomer.bill << " RS/_" << endl;
+            cout << "Bill : " << "₹" << traversal->cusotomer.bill << endl;
             cout << "-----------------------------------------------------" << endl;
 
             traversal = traversal->next;
@@ -663,7 +663,7 @@ void displayAllOrdersHomeDeliveryCustomers()
 {
     if (myFoodStore->nextHomeDeliveryCustomer == NULL)
     {
-        cout << "There is no Order for Home Delivery Customer till yet" << endl;
+        cout << "There is no Order for Home Delivery Customer yet" << endl;
     }
     else
     {
@@ -673,11 +673,11 @@ void displayAllOrdersHomeDeliveryCustomers()
             cout << "-----------------------------------------------------" << endl;
             cout << "Home Delivery Customer : " << traversal->cusotomer.name << endl;
             cout << "Age : " << traversal->cusotomer.age << endl;
-            cout << "Pizza Name : " << traversal->cusotomer.itemName << endl;
+            cout << "Item Name : " << traversal->cusotomer.itemName << endl;
             cout << "Quantity : " << traversal->cusotomer.quantity << endl;
             cout << "Delivery Distance : " << traversal->deliveryCharges << "KM"<<endl;
             cout << "Delivery Charges : " << traversal->distanceDelivery << endl;
-            cout << "Bill : " << traversal->cusotomer.bill << " RS/_" << endl;
+            cout << "Bill : " <<  "₹" << traversal->cusotomer.bill << endl;
             cout << "Delivery Address : " << traversal->address << endl;
             cout << "-----------------------------------------------------" << endl;
 
@@ -690,7 +690,7 @@ void displayAllOrdersDineInCustomers()
 {
     if (myFoodStore->nextDineInCustomer == NULL)
     {
-        cout << "There is no Order for Dine-In Customer till yet" << endl;
+        cout << "There is no Order for Dine-In Customer yet" << endl;
     }
     else
     {
@@ -700,7 +700,7 @@ void displayAllOrdersDineInCustomers()
             cout << "-----------------------------------------------------" << endl;
             cout << "Walking Customer : " << traversal->cusotomer.name << endl;
             cout << "Age : " << traversal->cusotomer.age << endl;
-            cout << "Pizza Name : " << traversal->cusotomer.itemName << endl;
+            cout << "Item Name : " << traversal->cusotomer.itemName << endl;
             cout << "Quantity : " << traversal->cusotomer.quantity << endl;
             cout << "Bill : " << traversal->cusotomer.bill << " RS/_" << endl;
             cout << "-----------------------------------------------------" << endl;
@@ -716,7 +716,7 @@ void displayAllOrders()
     cout << "The Take-Away Customers Are :" << endl;
     displayAllOrdersTakeAwayCustomers();
 
-    cout << "The Dine-IN Customers Are :" << endl;
+    cout << "The Dine-In Customers Are :" << endl;
     displayAllOrdersDineInCustomers();
 
     cout << "The Home Delivery Customers Are :" << endl;
@@ -745,10 +745,10 @@ void totalbillofPendingOrders()
     }
     total = takeAway + dineIn + homeDelivery;
 
-    cout << "The total bill of pending orders for Take-Away customers are : " << takeAway << " RS/_" << endl;
-    cout << "The total bill of pending orders for Dine-In customers are : " << dineIn << " RS/_" << endl;
-    cout << "The total bill of pending orders for Delivery customers are : " << homeDelivery << " RS/_" << endl;
-    cout << "The Total orders pending are : " << total << " RS/_" << endl;
+    cout << "The total bill of pending orders for Take-Away customers are : " <<  "₹" << takeAway << endl;
+    cout << "The total bill of pending orders for Dine-In customers are : "  <<  "₹" << dineIn << endl;
+    cout << "The total bill of pending orders for Delivery customers are : " <<  "₹" << homeDelivery << endl;
+    cout << "The Total orders pending are : " <<  "₹" << total << endl;
 }
 
 double totalEarnings(servedCustomer *root){
@@ -765,19 +765,19 @@ double totalEarnings(servedCustomer *root){
 // making a graph for the available delivery options
 
 //                           0              1             2        3          4           5
-string deliveryPoints[] = {"FoodStore", "Chauburji", "Shadman", "Islampura", "JoharTown", "Anarkali"};
+string deliveryPoints[] = {"FoodStore", "Gurgaon", "Krishna Nagar", "Pitampura", "Dwarka", "CP"};
 
 // first value in the pair is vertex and second is the distance (weight) in KM
 
 vector<vector<pair<int, int>>> deliveryMap = {
 
     // first value in the pair is vertex and second is the distance (weight) in KM
-    {{1, 2}, {2, 3}, {3, 5}, {5, 4}}, //  0  (Pizza Shop)
-    {{0, 2}, {5, 1}},                 //  1  (Chauburji)
-    {{0, 3}, {3, 1}},                 //  2  (Shadman)
-    {{0, 5}, {4, 2}, {5, 2}, {2, 1}}, //  3  (Islampura)
-    {{3, 2}, {5, 2}},                 //  4  (Johar Town)
-    {{0, 4}, {1, 1},{3,2} ,{4, 2}}          //  5  (Anarkali)
+    {{1, 2}, {2, 3}, {3, 5}, {5, 4}}, //  0  (Food Store)
+    {{0, 2}, {5, 1}},                 //  1  (Gurgaon)
+    {{0, 3}, {3, 1}},                 //  2  (Krishna Nagar)
+    {{0, 5}, {4, 2}, {5, 2}, {2, 1}}, //  3  (Pitampura)
+    {{3, 2}, {5, 2}},                 //  4  (Dwarka)
+    {{0, 4}, {1, 1},{3,2} ,{4, 2}}    //  5  (CP)
 
 };
 
@@ -785,7 +785,7 @@ vector<int> dijkstra(int sourceNode)
 {
     vector<int> distance(6, infinity);
     set<pair<int, int>> s;
-    distance[sourceNode] = 0; // Pizza Shop
+    distance[sourceNode] = 0; // Food Store
     s.insert(make_pair(0, sourceNode));
 
     while (!s.empty())
@@ -815,26 +815,26 @@ vector<int> dijkstra(int sourceNode)
 
 int main()
 {
-    // making pizza shop
+    // making Food Store
     myFoodStore = new FoodStore;
 
     // setting the name
-    myFoodStore->shopName = "The Pizza Delight";
+    myFoodStore->shopName = "The Foodies Palace";
 
     // setting the address
-    myFoodStore->address = "Liberty Chowk, Lahore";
+    myFoodStore->address = "Rajiv Chowk, Delhi";
 
     // Setting the menu
     myFoodStore->menu = new string[11]{"",
-                                       "chickenTikka", "arabicRanch",
-                                       "chickenFajita", "cheeseLover",
-                                       "chickenSupreme", "allveggie",
-                                       "garlicWest", "BeefBold",
-                                       "phantom", "mexicanDelight"};
+                                       "Veg Burger", "Crispy Corn",
+                                       "Veg Pizza", "French Fries",
+                                       "Paneer Sandwich", "Mojito",
+                                       "Veg Subway", "Cold Coffee",
+                                       "Butter Popcorn", "Chocolate Shake"};
 
     // setting the price
 
-    myFoodStore->price = new int[11]{0, 2000, 2500, 2400, 2200, 2700, 2000, 2100, 3000, 3000, 2800};
+    myFoodStore->price = new int[11]{0, 100, 150, 240, 90, 60, 100, 150, 150, 90, 150};
 
     int option = -99;
 
@@ -889,7 +889,7 @@ int main()
         cin >> option;
 
         // for taking input of Customer Details
-        int age, quantity, pizzaIndex;
+        int age, quantity, itemIndex;
         double bill;
         string address;
         string name;
@@ -902,13 +902,13 @@ int main()
             cin >> name;
             cout << "Enter the age of the customer: ";
             cin >> age;
-            cout << "Enter the quantity of the pizza: ";
+            cout << "Enter the option for the Item: ";
+            cin >> itemIndex;
+            cout << "Enter the quantity of selected Item: ";
             cin >> quantity;
-            cout << "Enter the option for the pizza: ";
-            cin >> pizzaIndex;
 
-            bill = quantity * myFoodStore->price[pizzaIndex];
-            placeOrderTakeAwayCustomer(age, name, myFoodStore->menu[pizzaIndex], quantity, bill);
+            bill = quantity * myFoodStore->price[itemIndex];
+            placeOrderTakeAwayCustomer(age, name, myFoodStore->menu[itemIndex], quantity, bill);
         }
         break;
 
@@ -939,18 +939,18 @@ int main()
             cin >> name;
             cout << "Enter the age of the customer: ";
             cin >> age;
-            cout << "Enter the quantity of the pizza: ";
+            cout << "Enter the option for the Item: ";
+            cin >> itemIndex;
+            cout << "Enter the quantity of selected Item: ";
             cin >> quantity;
-            cout << "Enter the option for the pizza: ";
-            cin >> pizzaIndex;
 
-            int deliveryChargesPerKM = 50;
+            int deliveryChargesPerKM = 9;
             int deliveryCharges = deliveryChargesPerKM * distanceFromShop[optionDelivery];
-            bill = quantity * myFoodStore->price[pizzaIndex] + deliveryCharges;
+            bill = quantity * myFoodStore->price[itemIndex] + deliveryCharges;
 
             // distance from the shop
             int distanceFromTheShop = distanceFromShop[optionDelivery];
-            placeOrderHomeDeliveryCustomer(age, name, myFoodStore->menu[pizzaIndex], quantity, bill, address, distanceFromTheShop, deliveryCharges);
+            placeOrderHomeDeliveryCustomer(age, name, myFoodStore->menu[itemIndex], quantity, bill, address, distanceFromTheShop, deliveryCharges);
         }
         break;
 
@@ -961,13 +961,13 @@ int main()
             cin >> name;
             cout << "Enter the age of the customer: ";
             cin >> age;
-            cout << "Enter the quantity of the pizza: ";
+            cout << "Enter the option for the Item: ";
+            cin >> itemIndex;
+            cout << "Enter the quantity of selected Item: ";
             cin >> quantity;
-            cout << "Enter the option for the pizza: ";
-            cin >> pizzaIndex;
 
-            bill = quantity * myFoodStore->price[pizzaIndex];
-            placeOrderDineInCustomer(age, name, myFoodStore->menu[pizzaIndex], quantity, bill);
+            bill = quantity * myFoodStore->price[itemIndex];
+            placeOrderDineInCustomer(age, name, myFoodStore->menu[itemIndex], quantity, bill);
         }
         break;
 
@@ -1054,15 +1054,15 @@ int main()
         // resetting thr state of total served orders
         servedTotal = 0;
         double totalx = totalEarnings(root);
-        cout << "The Total Earnings are : " << totalx << endl;
+        cout << "The Total Earnings are : " <<  "₹" << totalx << endl;
         }
         break;
         }
 
     } while (option != 0);
 
-    cout << "Pizza Order Management System -- Terminated" << endl;
-    cout << "Thank you for Using our Services " << endl;
+    cout << "Order Management System -- Terminated" << endl;
+    cout << "Thank you for using our Services " << endl;
 
     return 0;
 }
